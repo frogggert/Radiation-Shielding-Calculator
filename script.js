@@ -4,15 +4,15 @@ const materialFactors = {
   regolith: 0.2
 };
 
-const baseRadiationPerDay = 1.0;     // relative Mars radiation
-const MSV_PER_RELATIVE_UNIT = 0.67;  // ≈ mSv/day on Mars
+const baseRadiationPerDay = 1.0;     
+const MSV_PER_RELATIVE_UNIT = 0.67;  
 
-// comparison constants
+
 const EARTH_BACKGROUND_MSV_PER_YEAR = 2.4;
 const CHEST_XRAY_MSV = 0.1;
 const BANANA_MSV = 0.0001;
 
-// elements
+
 const materialSelect = document.getElementById("material");
 const thicknessSlider = document.getElementById("thickness");
 const thicknessValue = document.getElementById("thicknessValue");
@@ -22,7 +22,7 @@ const durationValue = document.getElementById("durationValue");
 
 const resultText = document.getElementById("result");
 
-// presets
+
 const presets = {
   short:    { material: "aluminum", thickness: 0.2, duration: 180 },
   long:     { material: "water",    thickness: 1.0, duration: 900 },
@@ -30,7 +30,7 @@ const presets = {
   lavatube: { material: "regolith", thickness: 3.0, duration: 1000 }
 };
 
-// calculation
+
 function calculate() {
   const material = materialSelect.value;
   const thickness = parseFloat(thicknessSlider.value);
@@ -76,23 +76,20 @@ function calculate() {
     <span class="verdict ${verdictClass}">${verdict}</span><br><br>
 
     <strong>Comparisons (rough):</strong><br>
-     ~${earthYears.toFixed(1)} years of Earth background<br>
-     ~${Math.round(xrays).toLocaleString()} chest X-rays<br>
-     ~${Math.round(bananas).toLocaleString()} bananas
+  ~${earthYears.toFixed(1)} years of Earth background<br>
+  ~${Math.round(xrays).toLocaleString()} chest X-rays<br>
+  ~${Math.round(bananas).toLocaleString()} bananas
   `;
 
-  // verdict stripe
   if (verdictClass === "safe") resultText.style.borderLeft = "6px solid #4caf50";
   else if (verdictClass === "danger") resultText.style.borderLeft = "6px solid #f44336";
   else resultText.style.borderLeft = "6px solid #ff9800";
 }
 
-// listeners
 materialSelect.addEventListener("change", calculate);
 thicknessSlider.addEventListener("input", calculate);
 durationSlider.addEventListener("input", calculate);
 
-// preset buttons
 document.querySelectorAll("#presets button").forEach(btn => {
   btn.addEventListener("click", () => {
     document
@@ -110,5 +107,5 @@ document.querySelectorAll("#presets button").forEach(btn => {
   });
 });
 
-// initial render
 calculate();
+
