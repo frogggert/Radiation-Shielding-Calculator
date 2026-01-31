@@ -76,9 +76,9 @@ function calculate() {
     <span class="verdict ${verdictClass}">${verdict}</span><br><br>
 
     <strong>Comparisons (rough):</strong><br>
-    🌍 ~${earthYears.toFixed(1)} years of Earth background<br>
-    🩻 ~${Math.round(xrays).toLocaleString()} chest X-rays<br>
-    🍌 ~${Math.round(bananas).toLocaleString()} bananas
+     ~${earthYears.toFixed(1)} years of Earth background<br>
+     ~${Math.round(xrays).toLocaleString()} chest X-rays<br>
+     ~${Math.round(bananas).toLocaleString()} bananas
   `;
 
   // verdict stripe
