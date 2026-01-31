@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mars Radiation Shielding Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Mars Radiation Shielding Calculator</h1>
+
+  <label>
+    Material:
+    <select id="material">
+      <option value="aluminum">Aluminum</option>
+      <option value="water">Water</option>
+      <option value="regolith">Regolith</option>
+    </select>
+  </label>
+
+  <br><br>
+
+  <label>
+    Thickness (meters):
+    <input
+      type="range"
+      id="thickness"
+      min="0.1"
+      max="3"
+      step="0.1"
+      value="0.5"
+    >
+    <span id="thicknessValue">0.5 m</span>
+  </label>
+
+  <br><br>
+
+<label>
+  Mission duration (days):
+  <input
+    type="range"
+    id="duration"
+    min="30"
+    max="1000"
+    step="10"
+    value="180"
+  >
+  <span id="durationValue">180 days</span>
+</label>
+
+<h2>Presets</h2>
+<div id="presets">
+    <button data-preset="short"> Short mission (180d)</button>
+    <button data-preset="long"> Long mission (900d)</button>
+    <button data-preset="storm"> Storm-ready habitat</button>
+    <button data-preset="lavatube">Lava tube base</button>
+</div>
+
+  <h2>Result</h2>
+  <p id="result">—</p>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+NOT ACCURATE REPRESENTATION! JUST FOR FUN
