@@ -40,7 +40,6 @@ strong {
   color: #9cc9ff;
 }
 
-/* presets */
 
 #presets {
   display: grid;
@@ -68,7 +67,6 @@ button:hover {
   box-shadow: 0 0 0 2px rgba(74, 125, 255, 0.4);
 }
 
-/* gradient verdict text */
 
 .verdict.safe {
   background: linear-gradient(90deg, #4caf50, #eaffea);
@@ -93,3 +91,4 @@ button:hover {
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
+
